@@ -43,9 +43,8 @@ public class Case02 {
 		//URLにアクセス
 		goTo("http://localhost:8080/lms/");
 		//タイトル名を取得し確認
-		String text1 = webDriver.getTitle();
-		assertEquals("ログイン | LMS", text1);
-		System.out.println(text1);
+		String titleName = webDriver.getTitle();
+		assertEquals("ログイン | LMS", titleName);
 		//エビデンスの取得
 		getEvidence(new Object() {
 		});

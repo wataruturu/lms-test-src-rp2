@@ -13,7 +13,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 /**
  * 結合テスト よくある質問機能
@@ -90,13 +89,10 @@ public class Case04 {
 	@Order(4)
 	@DisplayName("テスト04 「よくある質問」リンクからよくある質問画面を別タブに開く")
 	void test04() {
-		//よくある質問リンクをctrlKeyと同時にクリック
+		//よくある質問リンクをクリック
 		WebElement element = webDriver.findElement(By.xpath("//a[text()=\"よくある質問\"]"));
 
-		Actions keys = new Actions(webDriver);
-		keys.keyDown(Keys.CONTROL);
-		keys.click(element);
-		keys.perform();
+		element.click();
 		//ページ読み込み待機
 
 		pageLoadTimeout(5);

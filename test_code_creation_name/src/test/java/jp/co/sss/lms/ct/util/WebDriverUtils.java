@@ -75,7 +75,6 @@ public class WebDriverUtils {
 		((JavascriptExecutor) webDriver).executeScript("window.scrollBy(0," + pixel + ");");
 	}
 
-	
 	/**
 	 * 指定位置までスクロール
 	 * @param pixel
@@ -113,6 +112,10 @@ public class WebDriverUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public static WebDriverWait createWait(int second) {
+		return new WebDriverWait(webDriver, Duration.ofSeconds(second));
 	}
 
 }

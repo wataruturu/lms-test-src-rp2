@@ -124,16 +124,19 @@ public class Case06 {
 	void test05() {
 		//カテゴリ検索の対象ワード
 		String targetWord = "【研修関係】";
-		String targetUrlString = "frequentlyAskedQuestionCategoryId=1";
+
 		WebElement element = webDriver.findElement(By.xpath("//a[contains(text(),\'" + targetWord + "\')]"));
 		element.click();
-		//URLの確認
-		assertTrue(webDriver.getCurrentUrl().contains(targetUrlString));
+
 		//表示された検索結果項目をリストで取得
 		List<WebElement> articleElements = webDriver.findElements(By.xpath("//tbody/tr/td/dl/dt"));
 		//検索項目の最後の項目が画面内に入るようスクロール
 		WebElement lastElement = articleElements.get(articleElements.size() - 1);
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", lastElement);
+
+		//URLの確認
+		String targetUrlString = "frequentlyAskedQuestionCategoryId=1";
+		assertTrue(webDriver.getCurrentUrl().contains(targetUrlString));
 		//エビデンス取得
 		getEvidence(new Object() {
 		});

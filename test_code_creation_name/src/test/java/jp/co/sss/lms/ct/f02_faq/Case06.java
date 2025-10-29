@@ -134,7 +134,7 @@ public class Case06 {
 		WebElement lastElement = articleElements.get(articleElements.size() - 1);
 		((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();", lastElement);
 
-		//URLの確認
+		//検索の後にURLが変更されていることを確認
 		String targetUrlString = "frequentlyAskedQuestionCategoryId=1";
 		assertTrue(webDriver.getCurrentUrl().contains(targetUrlString));
 		//エビデンス取得

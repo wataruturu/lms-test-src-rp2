@@ -103,6 +103,7 @@ public class Case07 {
 		String text = "報告内容";
 		//報告入力欄に文章を入力
 		WebElement insertField = webDriver.findElement(By.xpath("//textarea"));
+		insertField.clear();
 		insertField.sendKeys(text, Keys.ENTER);
 		//提出ボタンを押下
 		WebElement submitButton = webDriver.findElement(By.xpath("//*[contains(text(),\'提出する\')]"));
